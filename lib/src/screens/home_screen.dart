@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/sections/account_actions.dart';
+import '../components/sections/account_points.dart';
 import '../components/sections/header.dart';
 import '../components/sections/recent_activity.dart';
 
@@ -13,6 +15,8 @@ class HomeScreen extends StatelessWidget {
         children: <Widget>[
           Header(),
           RecentActivity(),
+          AccountActions(),
+          AccountPoints(),
         ],
       ),
     );

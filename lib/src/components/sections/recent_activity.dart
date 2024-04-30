@@ -1,5 +1,6 @@
 import 'package:alura_style/src/components/box_card.dart';
 import 'package:alura_style/src/components/color_dot.dart';
+import 'package:alura_style/src/components/content_divison.dart';
 
 import 'package:alura_style/src/themes/theme_colors.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +23,10 @@ class _RecentActivityContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
@@ -67,6 +70,32 @@ class _RecentActivityContent extends StatelessWidget {
             ),
           ],
         ),
+        const Padding(
+          padding: EdgeInsets.only(top: 16, bottom: 8),
+          child: Text('Limite de gastos: \$432.93'),
+        ),
+        Container(
+          clipBehavior: Clip.hardEdge,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
+          child: const LinearProgressIndicator(
+            color: Colors.purple,
+            value: 0.3,
+            minHeight: 7,
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(top: 8, bottom: 8),
+          child: ContentDivision(),
+        ),
+        const Text(
+            'Esse mês você gastou \$1500.00 com jogos. Tente abaixar esse custo!'),
+        TextButton(
+          onPressed: () {},
+          child: const Text(
+            'Diga-me como',
+            style: TextStyle(color: Colors.purple),
+          ),
+        )
       ],
     );
   }
